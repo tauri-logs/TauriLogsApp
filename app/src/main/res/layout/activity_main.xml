@@ -6,21 +6,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:name="com.taurilogs.app.ToolbarFragment"
+            android:id="@+id/fragmentContainerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="190dp" app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/linearLayout3"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-    >
-        <androidx.appcompat.widget.Toolbar
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout" app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
+            android:layout_marginBottom="286dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent">
+        <EditText
+                android:layout_width="225dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:inputType="textPersonName"
+                android:hint="@string/search_username_placeholder"
+                android:ems="10"
+                android:id="@+id/editTextTextPersonName"
+        />
+        <Spinner
+                android:layout_width="225dp"
+                android:layout_marginBottom="8dp"
+                android:layout_height="48dp" android:id="@+id/spinner"/>
+        <Button
+                android:text="@string/search_button"
+                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                android:theme="?attr/actionBarTheme"
-                android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
-        app:menu="@menu/menu_main"/>
+                android:layout_height="48dp" android:id="@+id/button"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

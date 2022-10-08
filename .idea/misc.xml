@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.11510416666666666" />
-        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/fragment_toolbar.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/toolbar.xml" value="0.22780797101449277" />
-        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/menu/menu_main.xml" value="0.264" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/menu/menu_main.xml" value="0.1" />
       </map>
     </option>
   </component>
