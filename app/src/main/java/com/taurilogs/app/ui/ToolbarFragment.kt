@@ -1,5 +1,5 @@
 
-package com.taurilogs.app
+package com.taurilogs.app.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.taurilogs.app.R
 import com.taurilogs.app.databinding.FragmentToolbarBinding
 
 // TODO: Rename parameter arguments, choose names that match
