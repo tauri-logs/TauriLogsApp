@@ -1,0 +1,31 @@
+package com.taurilogs.app.enums
+
+enum class RaceEnum {
+    UNKNOWN,
+    HUMAN,
+    ORC,
+    DWARF,
+    NIGHT_ELF,
+    UNDEAD,
+    TAUREN,
+    GNOME,
+    TROLL,
+    GOBLIN,
+    BLOODELF,
+    DRAENEI,
+    FEL_ORC,
+    NAGA,
+    BROKEN,
+    SKELETON,
+    VRYKUL,
+    TUSKARR,
+    FOREST_TROLL,
+    TAUNKA,
+    NORTHREND_SKELETON,
+    ICE_TROLL,
+    WORGEN,
+    GILNEAN,
+    PANDAREN_NEUTRAL,
+    PANDAREN_ALLIANCE,
+    PANDAREN_HORDE
+}

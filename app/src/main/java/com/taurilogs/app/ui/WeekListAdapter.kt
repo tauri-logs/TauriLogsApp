@@ -7,12 +7,21 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.taurilogs.app.R
+import com.taurilogs.app.models.Week
 
 class WeekListAdapter(
     private val context: Context,
-    private val weekTitle: List<String>,
-    private val weekDetail: HashMap<String, List<String>>
+    private val weeks: List<Week>
 ) : BaseExpandableListAdapter() {
+
+    private val weekTitle: List<String> = weeks.map { it.startDate.toString() }
+    private val weekDetail: HashMap<String, List<String>> = hashMapOf()
+
+    init {
+        weeks.forEach { week ->
+            weekDetail[week.startDate.toString()] = week.logs.map { it.deaths_fight.toString() }
+        }
+    }
     override fun getGroupCount(): Int {
         return weekTitle.size
     }

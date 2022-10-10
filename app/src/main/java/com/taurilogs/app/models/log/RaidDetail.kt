@@ -1,9 +1,7 @@
 package com.taurilogs.app.models.log
 
-import java.time.LocalDateTime
-import java.time.ZoneOffset
 
-class Log(
+class RaidDetail(
     deahts_total: Int,
     deaths_fight: Int,
     difficulty: Int,
@@ -20,10 +18,8 @@ class Log(
     wipes: Int,
     resurrects_fight: Int,
     member_count: Int,
-    val item_count: Int,
-    val pos: Int,
-    val rid: Int
-//    difficultyName?: string
+    val rid: Int,
+//    val members: List<Member>
 ) : LogBase(
     deahts_total,
     deaths_fight,
@@ -42,10 +38,5 @@ class Log(
     resurrects_fight,
     member_count
 ) {
-    val killDate: LocalDateTime
-    init {
-        killDate = LocalDateTime.ofEpochSecond(killtime, 0, ZoneOffset.UTC)
-    }
 
 }
-
