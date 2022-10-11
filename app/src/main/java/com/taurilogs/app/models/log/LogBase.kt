@@ -1,5 +1,7 @@
 package com.taurilogs.app.models.log
 
+import com.squareup.moshi.JsonClass
+
 abstract class LogBase(
     val deahts_total: Int,
     val deaths_fight: Int,

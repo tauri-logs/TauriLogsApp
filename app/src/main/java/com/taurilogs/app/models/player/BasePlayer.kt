@@ -11,6 +11,6 @@ abstract class BasePlayer(
     @Json(name = "class")
     val playerClass: ClassEnum,
     val gender: GenderEnum,
-    val race: RaceEnum,
+    val race: RaceEnum
 ) {
 }

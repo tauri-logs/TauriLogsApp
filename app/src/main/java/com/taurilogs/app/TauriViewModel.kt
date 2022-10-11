@@ -36,8 +36,6 @@ class TauriViewModel(private val service: TauriWebService) : ViewModel() {
             var weekStart = week.startDate
             weeks.add(week)
             for (log in logs) {
-                android.util.Log.d("Week", "Log date: ${log.killtime}")
-                android.util.Log.d("Week", "Log date: ${weekStart.toEpochSecond(ZoneOffset.UTC)}")
                 if (log.killtime < weekStart.toEpochSecond(ZoneOffset.UTC)) {
                     week = Week(log.killtime)
                     weekStart = week.startDate

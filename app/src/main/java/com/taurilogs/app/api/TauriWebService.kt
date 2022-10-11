@@ -4,7 +4,8 @@ import android.content.Context
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.taurilogs.app.api.responses.PlayerRaidResponse
-import com.taurilogs.app.enums.RealmEnum
+import com.taurilogs.app.enums.*
+import com.taurilogs.app.enums.adapters.*
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -32,7 +33,15 @@ class TauriWebService(context: Context, private val dispatcher: CoroutineDispatc
     }
 
     private fun createTauriWebApi(): TauriWebApi {
-        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory())
+            .add(ClassEnumAdapter())
+            .add(ExpansionEnumAdapter())
+            .add(FactionEnumAdapter())
+            .add(GenderEnumAdapter())
+            .add(RaceEnumAdapter())
+            .add(RealmEnumAdapter())
+            .add(SpecEnumAdapter())
+            .build()
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))

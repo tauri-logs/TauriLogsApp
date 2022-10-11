@@ -1,5 +1,8 @@
 package com.taurilogs.app.models.log
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 data class Encounter(
     val encounter_difficulty: Int,
     val encounter_id: Int,

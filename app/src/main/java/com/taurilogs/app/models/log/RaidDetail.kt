@@ -1,6 +1,9 @@
 package com.taurilogs.app.models.log
 
+import com.squareup.moshi.JsonClass
 
+
+@JsonClass(generateAdapter = true)
 class RaidDetail(
     deahts_total: Int,
     deaths_fight: Int,
@@ -8,7 +11,7 @@ class RaidDetail(
     encounter_data: Encounter,
     encounter_id: Int,
     fight_time: Int,
-    guild: Guild,
+    guilddata: Guild,
     guildid: Int,
     guildrid: Int,
     killtime: Long,
@@ -27,7 +30,7 @@ class RaidDetail(
     encounter_data,
     encounter_id,
     fight_time,
-    guild,
+    guilddata,
     guildid,
     guildrid,
     killtime,

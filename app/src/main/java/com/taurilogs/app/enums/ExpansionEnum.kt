@@ -1,5 +1,6 @@
 package com.taurilogs.app.enums
 
+
 enum class ExpansionEnum {
     VANILLA,
     TBC,

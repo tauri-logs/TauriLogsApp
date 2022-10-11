@@ -1,10 +1,12 @@
 package com.taurilogs.app.models.player
 
+import com.squareup.moshi.JsonClass
 import com.taurilogs.app.enums.ClassEnum
 import com.taurilogs.app.enums.GenderEnum
 import com.taurilogs.app.enums.RaceEnum
 import com.taurilogs.app.enums.SpecEnum
 
+@JsonClass(generateAdapter = true)
 class Member(
     name: String,
     playerClass: ClassEnum,
