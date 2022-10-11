@@ -21,7 +21,11 @@ class SearchActivity : AppCompatActivity() {
         val realms = RealmEnum.values().map { it.realm }
         binding.spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, realms)
         binding.button.setOnClickListener { _ ->
-            tauriViewModel.getLogs(RealmEnum.EVERMOON, "Stepan", 10).observe(this) {_ ->
+            tauriViewModel.getLogs(
+                RealmEnum.values()[binding.spinner.selectedItemPosition],
+                binding.username.text.toString(),
+                50
+            ).observe(this) { _ ->
                 Intent(this, PlayerActivity::class.java).apply {
                     startActivity(this)
                 }

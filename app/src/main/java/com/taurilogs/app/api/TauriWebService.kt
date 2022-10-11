@@ -63,9 +63,12 @@ class TauriWebService(context: Context, private val dispatcher: CoroutineDispatc
 
     suspend fun getPlayerRaidLogs(realm: RealmEnum, characterName: String, limit: Int = 0): ApiResponse<PlayerRaidResponse> {
         return withContext(dispatcher) {
-            api.getPlayerRaidLogs( ApiRequest(properties.getProperty("secret"), "raid-player",
-                RequestParams(realm.toString(), characterName, limit, null)
-            ))
+            api.getPlayerRaidLogs(
+                ApiRequest(
+                    properties.getProperty("secret"), "raid-player",
+                    RequestParams(realm.toString(), characterName, limit, null)
+                )
+            )
         }
     }
 
