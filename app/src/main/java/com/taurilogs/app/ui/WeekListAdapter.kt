@@ -8,20 +8,27 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.taurilogs.app.R
 import com.taurilogs.app.models.Week
+import java.time.format.DateTimeFormatter
 
 class WeekListAdapter(
     private val context: Context,
     private val weeks: List<Week>
 ) : BaseExpandableListAdapter() {
 
-    private val weekTitle: List<String> = weeks.map { it.startDate.toString() }
+    private val weekTitle: List<String> = weeks.map { getGroupName(it) }
     private val weekDetail: HashMap<String, List<String>> = hashMapOf()
 
     init {
         weeks.forEach { week ->
-            weekDetail[week.startDate.toString()] = week.logs.map { it.deaths_fight.toString() }
+            weekDetail[getGroupName(week)] = week.logs.map { it.encounter_data.encounter_name }
         }
     }
+
+    private fun getGroupName(week: Week): String {
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.")
+        return "${week.startDate.format(formatter)} - ${week.endDate.format(formatter)}"
+    }
+
     override fun getGroupCount(): Int {
         return weekTitle.size
     }

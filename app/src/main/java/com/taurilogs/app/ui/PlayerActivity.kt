@@ -19,6 +19,7 @@ class PlayerActivity : AppCompatActivity() {
         val owner = this
         tauriViewModel.getLogs().value?.apply {
             tauriViewModel.getWeeks(this).observe(owner) { weeks ->
+                //TODO: create in coroutine
                 binding.expandableListView.setAdapter(WeekListAdapter(owner, weeks))
             }
         }
