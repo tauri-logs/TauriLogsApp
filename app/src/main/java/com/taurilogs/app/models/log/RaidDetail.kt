@@ -1,13 +1,15 @@
 package com.taurilogs.app.models.log
 
 import com.squareup.moshi.JsonClass
+import com.taurilogs.app.enums.DifficultyEnum
+import com.taurilogs.app.models.player.Member
 
 
 @JsonClass(generateAdapter = true)
 class RaidDetail(
     deahts_total: Int,
     deaths_fight: Int,
-    difficulty: Int,
+    difficulty: DifficultyEnum,
     encounter_data: Encounter,
     encounter_id: Int,
     fight_time: Int,
@@ -22,7 +24,7 @@ class RaidDetail(
     resurrects_fight: Int,
     member_count: Int,
     val rid: Int,
-//    val members: List<Member>
+    val members: List<Member>
 ) : LogBase(
     deahts_total,
     deaths_fight,

@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.lifecycle.lifecycleScope
 import com.taurilogs.app.SearchViewModel
 import com.taurilogs.app.databinding.ActivitySearchBinding
 import com.taurilogs.app.enums.RealmEnum

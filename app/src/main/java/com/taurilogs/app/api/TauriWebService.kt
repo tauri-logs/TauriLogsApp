@@ -41,6 +41,7 @@ class TauriWebService(context: Context, private val dispatcher: CoroutineDispatc
             .add(RaceEnumAdapter())
             .add(RealmEnumAdapter())
             .add(SpecEnumAdapter())
+            .add(DifficultyEnumAdapter())
             .build()
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)

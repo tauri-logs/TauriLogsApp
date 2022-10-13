@@ -1,6 +1,7 @@
 package com.taurilogs.app.models.log
 
 import com.squareup.moshi.JsonClass
+import com.taurilogs.app.enums.DifficultyEnum
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
@@ -8,7 +9,7 @@ import java.time.ZoneOffset
 class Log(
     deahts_total: Int,
     deaths_fight: Int,
-    difficulty: Int,
+    difficulty: DifficultyEnum,
     encounter_data: Encounter,
     encounter_id: Int,
     fight_time: Int,
@@ -24,8 +25,7 @@ class Log(
     member_count: Int,
     val item_count: Int,
     val pos: Int,
-    val rid: Int
-//    difficultyName?: string
+    val rid: Int,
 ) : LogBase(
     deahts_total,
     deaths_fight,
@@ -45,8 +45,10 @@ class Log(
     member_count
 ) {
     val killDate: LocalDateTime
+    val difficultyName: String
     init {
         killDate = LocalDateTime.ofEpochSecond(killtime, 0, ZoneOffset.UTC)
+        difficultyName = "${encounter_data.encounter_name} ${difficulty.description}"
     }
 
 }

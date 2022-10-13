@@ -1,10 +1,12 @@
 package com.taurilogs.app.models.log
 
+import com.taurilogs.app.enums.DifficultyEnum
+
 
 abstract class LogBase(
     val deahts_total: Int,
     val deaths_fight: Int,
-    val difficulty: Int,
+    val difficulty: DifficultyEnum,
     val encounter_data: Encounter,
     val encounter_id: Int,
     val fight_time: Int,

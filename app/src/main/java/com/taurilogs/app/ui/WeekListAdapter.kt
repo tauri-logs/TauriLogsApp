@@ -16,11 +16,12 @@ class WeekListAdapter(
 ) : BaseExpandableListAdapter() {
 
     private val weekTitle: List<String> = weeks.map { getGroupName(it) }
-    private val weekDetail: HashMap<String, List<String>> = hashMapOf()
+    private val weekDetail: HashMap<String, List<List<String>>> = hashMapOf()
 
     init {
         weeks.forEach { week ->
-            weekDetail[getGroupName(week)] = week.logs.map { it.encounter_data.encounter_name }
+            weekDetail[getGroupName(week)] =
+                week.logs.map { listOf(it.difficultyName, "${it.killDate.dayOfMonth}.") }
         }
     }
 
@@ -74,8 +75,11 @@ class WeekListAdapter(
         parent: ViewGroup?
     ): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.week_list_item, parent, false)
-        val expandedTextView = view.findViewById<TextView>(R.id.weekListItem)
-        expandedTextView.text = getChild(groupPosition, childPosition) as String
+        val expandedTextViewLeft = view.findViewById<TextView>(R.id.weekListItemTextLeft)
+        val expandedTextViewRight = view.findViewById<TextView>(R.id.weekListItemTextRight)
+        val (left, right) = getChild(groupPosition, childPosition) as List<*>
+        expandedTextViewLeft.text = left as String
+        expandedTextViewRight.text = right as String
         return view
     }
 
