@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter
 
 class WeekListAdapter(
     private val context: Context,
-    private val weeks: List<Week>
+    weeks: List<Week>
 ) : BaseExpandableListAdapter() {
 
     private val weekTitle: List<String> = weeks.map { getGroupName(it) }

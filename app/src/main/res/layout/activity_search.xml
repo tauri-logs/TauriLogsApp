@@ -44,4 +44,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp" android:id="@+id/button"/>
     </LinearLayout>
+    <ProgressBar
+            android:id="@+id/progressBar_cyclic"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="40dp"
+            android:minWidth="40dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
