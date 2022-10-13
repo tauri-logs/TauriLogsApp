@@ -20,6 +20,7 @@ class SearchViewModel(private val service: LogService) : ViewModel() {
     val searchFinished: MutableLiveData<ServiceResponse> = MutableLiveData()
 
     private val errorHandler = CoroutineExceptionHandler { _, exception ->
+        android.util.Log.d("Tauri Logs", "Coroutine exception ", exception)
         searchFinished.value = ServiceResponse(false, exception.message ?: "Unknown error")
     }
 

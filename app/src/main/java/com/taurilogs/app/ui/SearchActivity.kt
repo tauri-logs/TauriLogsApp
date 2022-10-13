@@ -20,6 +20,7 @@ class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("SearchActivity", "onCreate")
         binding = ActivitySearchBinding.inflate(layoutInflater)
         val realms = RealmEnum.values().map { it.realm }
         binding.spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, realms)
@@ -45,7 +46,6 @@ class SearchActivity : AppCompatActivity() {
             } else {
                 if (it.errorMessage != null) {
                     Toast.makeText(this, it.errorMessage, Toast.LENGTH_LONG).show()
-                    Log.d("Tauri Logs", "Coroutine exception ${it.errorMessage}")
                 } else {
                     visibility = View.VISIBLE
                 }
@@ -53,5 +53,10 @@ class SearchActivity : AppCompatActivity() {
             Log.d("Tauri Logs", "Search finished")
             binding.progressBarCyclic.visibility = visibility
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("SearchActivity", "onDestroy")
     }
 }

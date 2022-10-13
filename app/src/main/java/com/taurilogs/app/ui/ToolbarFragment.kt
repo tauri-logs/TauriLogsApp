@@ -1,6 +1,7 @@
 
 package com.taurilogs.app.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -36,7 +37,7 @@ class ToolbarFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentToolbarBinding.inflate(inflater, container, false)
         val toolbar = binding.toolbar
-        toolbar.title = "Tauri Logs"
+        toolbar.title = resources.getString(R.string.toolbar_title)
         toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.menu_settings -> {
@@ -44,13 +45,22 @@ class ToolbarFragment : Fragment() {
                     true
                 }
                 R.id.menu_search -> {
-                    Log.d("Tauri Logs", "Search")
+                    Log.d("Tauri Logs", "Search ${activity?.componentName?.className}")
+                    moveToDestination(SearchActivity::class.java)
                     true
                 }
                 else -> false
             }
         }
         return binding.root
+    }
+
+    private fun moveToDestination(destinationClass: Class<*>) {
+        if (activity?.componentName?.className != destinationClass.name) {
+            Intent(activity, destinationClass).apply {
+                startActivity(this)
+            }
+        }
     }
 
     override fun onDestroyView() {

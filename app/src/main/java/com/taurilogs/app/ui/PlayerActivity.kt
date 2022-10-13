@@ -23,11 +23,6 @@ class PlayerActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    override fun onPause() {
-        super.onPause()
-        Log.d("PlayerActivity", "onPause")
-    }
-
     override fun onStop() {
         super.onStop()
         Log.d("PlayerActivity", "onStop")
@@ -41,10 +36,5 @@ class PlayerActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d("PlayerActivity", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("PlayerActivity", "onResume")
     }
 }
