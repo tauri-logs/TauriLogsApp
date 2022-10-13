@@ -2,6 +2,7 @@ package com.taurilogs.app.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ExpandableListView
 import androidx.appcompat.app.AppCompatActivity
 import com.taurilogs.app.PlayerViewModel
 import com.taurilogs.app.databinding.ActivityPlayerBinding
@@ -19,6 +20,11 @@ class PlayerActivity : AppCompatActivity() {
 
         playerViewModel.getWeekListAdapter(owner).observe(owner) { adapter ->
             binding.expandableListView.setAdapter(adapter)
+            binding.expandableListView.setOnChildClickListener(ExpandableListView.OnChildClickListener() {
+                _, _, _, _, id ->
+                Log.d("Tauri Logs", "Clicked on log: $id")
+                true
+            })
         }
         setContentView(binding.root)
     }

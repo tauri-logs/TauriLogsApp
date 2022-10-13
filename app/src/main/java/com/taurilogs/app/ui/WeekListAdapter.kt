@@ -21,7 +21,7 @@ class WeekListAdapter(
     init {
         weeks.forEach { week ->
             weekDetail[getGroupName(week)] =
-                week.logs.map { listOf(it.difficultyName, "${it.killDate.dayOfMonth}.") }
+                week.logs.map { listOf(it.difficultyName, "${it.killDate.dayOfMonth}.", it.log_id.toString()) }
         }
     }
 
@@ -51,7 +51,7 @@ class WeekListAdapter(
     }
 
     override fun getChildId(groupPosition: Int, childPosition: Int): Long {
-        return childPosition.toLong()
+        return weekDetail[weekTitle[groupPosition]]!![childPosition][2].toLong()
     }
 
     override fun hasStableIds(): Boolean {
