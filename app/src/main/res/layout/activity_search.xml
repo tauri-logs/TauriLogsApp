@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_width="225dp"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout" app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
+            android:id="@+id/linearLayout"
             android:layout_marginBottom="286dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent">
         <!--TODO: remove text-->
@@ -47,10 +47,12 @@
     <ProgressBar
             android:id="@+id/progressBar_cyclic"
             android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:minHeight="40dp"
             android:minWidth="40dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
