@@ -3,6 +3,7 @@ package com.taurilogs.app.models.log
 import com.squareup.moshi.JsonClass
 import com.taurilogs.app.enums.DifficultyEnum
 import com.taurilogs.app.models.player.Member
+import kotlin.math.roundToInt
 
 
 @JsonClass(generateAdapter = true)
@@ -43,5 +44,13 @@ class RaidDetail(
     resurrects_fight,
     member_count
 ) {
+
+    init {
+        val fightTime = fight_time / 1000
+        members.forEach {
+            it.dps = it.dmg_done / fightTime
+            it.hps = it.heal_done / fightTime
+        }
+    }
 
 }

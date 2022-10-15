@@ -49,7 +49,7 @@ class SearchActivity : AppCompatActivity() {
                     visibility = View.VISIBLE
                 }
             }
-            Log.d("Tauri Logs", "Search finished")
+            Log.d("Search Activity", "Search finished")
             binding.progressBarCyclic.visibility = visibility
         }
     }

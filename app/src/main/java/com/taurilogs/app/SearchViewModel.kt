@@ -31,6 +31,7 @@ class SearchViewModel(private val service: LogService) : ViewModel() {
         viewModelScope.launch(errorHandler) {
             android.util.Log.d("Tauri Logs", "fetchLogs coroutine")
             val timeInMilis = measureTimeMillis {
+                service.realm = realm
                 searchFinished.value = ServiceResponse(false)
                 searchFinished.value = service.getPlayerRaidLogs(realm, name, limit)
             }

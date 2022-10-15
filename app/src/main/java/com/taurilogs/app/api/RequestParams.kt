@@ -6,6 +6,6 @@ class RequestParams(
     val r: String?, // realm
     val cn: String?, // character name
     val limit: Int?, // limit
-    val id: Int?, // log id
+    val id: Long?, // log id
 ) {
 }

@@ -4,4 +4,7 @@
     <string name="settings_button">Settings</string>
     <string name="search_username_placeholder">Username</string>
     <string name="toolbar_title">Tauri Logs</string>
+    <string name="name_header">Name</string>
+    <string name="dps_header">DPS</string>
+    <string name="hps_header">HPS</string>
 </resources>

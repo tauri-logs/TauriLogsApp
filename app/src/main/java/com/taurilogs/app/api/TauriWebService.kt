@@ -6,6 +6,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.taurilogs.app.api.responses.PlayerRaidResponse
 import com.taurilogs.app.enums.*
 import com.taurilogs.app.enums.adapters.*
+import com.taurilogs.app.models.log.RaidDetail
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -68,6 +69,16 @@ class TauriWebService(context: Context, private val dispatcher: CoroutineDispatc
                 ApiRequest(
                     properties.getProperty("secret"), "raid-player",
                     RequestParams(realm.toString(), characterName, limit, null)
+                )
+            )
+        }
+    }
+    suspend fun getLogDetails(logId: Long, realm: RealmEnum): ApiResponse<RaidDetail> {
+        return withContext(dispatcher) {
+            api.getLogDetails(
+                ApiRequest(
+                    properties.getProperty("secret"), "raid-log",
+                    RequestParams(realm.toString(), null, null, logId)
                 )
             )
         }

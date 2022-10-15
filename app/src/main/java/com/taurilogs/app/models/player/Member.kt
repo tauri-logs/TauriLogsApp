@@ -1,5 +1,6 @@
 package com.taurilogs.app.models.player
 
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import com.taurilogs.app.enums.ClassEnum
 import com.taurilogs.app.enums.GenderEnum
@@ -9,6 +10,7 @@ import com.taurilogs.app.enums.SpecEnum
 @JsonClass(generateAdapter = true)
 class Member(
     name: String,
+    @Json(name = "class")
     playerClass: ClassEnum,
     gender: GenderEnum,
     race: RaceEnum,
@@ -29,9 +31,8 @@ class Member(
     val talents: String?,
     val trinket_0: Trinket?,
     val trinket_1: Trinket?,
-    val dps: Long?,
-    val percentage_dmg_done: Int?,
-    val percentage_heal_done: Int?
+    var dps: Long?,
+    var hps: Long?
 ): BasePlayer(
     name,
     playerClass,

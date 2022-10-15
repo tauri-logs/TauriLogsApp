@@ -9,12 +9,22 @@
     <androidx.fragment.app.FragmentContainerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:name="com.taurilogs.app.ui.ToolbarFragment"
-            android:id="@+id/fragmentContainerView3"/>
+            android:id="@+id/toolbarFragment"/>
+    <ProgressBar
+            android:id="@+id/progressBar_cyclic"
+            android:visibility="gone"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:minHeight="40dp"
+            android:minWidth="40dp"
+            android:layout_marginTop="0dp" android:layout_below="@+id/toolbarFragment"
+            android:layout_centerHorizontal="true"/>
     <ExpandableListView
             android:id="@+id/expandableListView"
-            android:layout_below="@id/fragmentContainerView3"
+            android:layout_below="@id/toolbarFragment"
             android:layout_width="match_parent"
             android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
             android:divider="@android:color/darker_gray"
-            android:dividerHeight="0.5dp" android:layout_height="wrap_content"/>
+            android:dividerHeight="0.5dp" android:layout_height="wrap_content">
+    </ExpandableListView>
 </RelativeLayout>
