@@ -44,13 +44,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp" android:id="@+id/button"/>
     </LinearLayout>
-    <ProgressBar
-            android:id="@+id/progressBar_cyclic"
-            android:visibility="gone"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:minHeight="40dp"
-            android:minWidth="40dp"
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:name="com.taurilogs.app.ui.LoadingFragment"
+            android:id="@+id/search_activity_loading_fragment"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintTop_toTopOf="parent"

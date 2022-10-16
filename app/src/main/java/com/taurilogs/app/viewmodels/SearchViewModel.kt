@@ -1,23 +1,15 @@
-package com.taurilogs.app
+package com.taurilogs.app.viewmodels
 
-import android.content.Context
-import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.taurilogs.app.api.TauriWebService
+import com.taurilogs.app.LogService
 import com.taurilogs.app.enums.RealmEnum
 import com.taurilogs.app.models.ServiceResponse
-import com.taurilogs.app.models.log.Log
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlin.system.measureTimeMillis
 
-class SearchViewModel(private val service: LogService) : ViewModel() {
-
-    val searchFinished: MutableLiveData<ServiceResponse> = MutableLiveData()
+class SearchViewModel(private val service: LogService) : CustomViewModel() {
 
     private val errorHandler = CoroutineExceptionHandler { _, exception ->
         android.util.Log.d("Tauri Logs", "Coroutine exception ", exception)

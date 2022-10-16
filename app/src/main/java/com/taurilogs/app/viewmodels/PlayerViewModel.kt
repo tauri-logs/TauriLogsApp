@@ -1,9 +1,9 @@
-package com.taurilogs.app
+package com.taurilogs.app.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.taurilogs.app.LogService
 import com.taurilogs.app.models.ServiceResponse
 import com.taurilogs.app.models.Week
 import com.taurilogs.app.models.log.Log
@@ -12,10 +12,9 @@ import kotlinx.coroutines.launch
 import java.time.ZoneOffset
 import kotlin.system.measureTimeMillis
 
-class PlayerViewModel(private val service: LogService) : ViewModel() {
+class PlayerViewModel(private val service: LogService) : CustomViewModel() {
 
     private val weekListAdapter: MutableLiveData<WeekListAdapter> = MutableLiveData()
-    val searchFinished: MutableLiveData<ServiceResponse> = MutableLiveData()
 
     private fun getWeeks(logs: List<Log>): List<Week> {
         android.util.Log.d("TauriViewModel", "getWeeks")

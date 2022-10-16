@@ -7,4 +7,6 @@
     <string name="name_header">Name</string>
     <string name="dps_header">DPS</string>
     <string name="hps_header">HPS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

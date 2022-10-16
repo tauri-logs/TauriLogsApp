@@ -11,8 +11,6 @@ import android.view.ViewGroup
 import com.taurilogs.app.R
 import com.taurilogs.app.databinding.FragmentToolbarBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val TITLE = "param1"
 
 /**
@@ -73,8 +71,7 @@ class ToolbarFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
+         * @param title Page title.
          * @return A new instance of fragment ToolbarFragment.
          */
         @JvmStatic

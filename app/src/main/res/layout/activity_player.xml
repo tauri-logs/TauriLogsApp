@@ -10,14 +10,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:name="com.taurilogs.app.ui.ToolbarFragment"
             android:id="@+id/toolbarFragment"/>
-    <ProgressBar
-            android:id="@+id/progressBar_cyclic"
-            android:visibility="gone"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:minHeight="40dp"
-            android:minWidth="40dp"
-            android:layout_marginTop="0dp" android:layout_below="@+id/toolbarFragment"
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:name="com.taurilogs.app.ui.LoadingFragment"
+            android:id="@+id/fragmentContainerView2" android:layout_below="@+id/toolbarFragment"
             android:layout_centerHorizontal="true"/>
     <ExpandableListView
             android:id="@+id/expandableListView"
