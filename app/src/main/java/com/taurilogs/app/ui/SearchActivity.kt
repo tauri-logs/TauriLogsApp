@@ -3,6 +3,7 @@ package com.taurilogs.app.ui
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import com.taurilogs.app.R
 import com.taurilogs.app.viewmodels.SearchViewModel
 import com.taurilogs.app.databinding.ActivitySearchBinding
 import com.taurilogs.app.enums.RealmEnum
@@ -19,7 +20,7 @@ class SearchActivity : CustomActivity() {
         Log.d("SearchActivity", "onCreate")
         binding = ActivitySearchBinding.inflate(layoutInflater)
         val realms = RealmEnum.values().map { it.realm }
-        binding.spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, realms)
+        binding.spinner.adapter = ArrayAdapter(this, R.layout.spinner_item, realms)
         binding.button.setOnClickListener { _ ->
             viewModel.fetchLogs(
                 RealmEnum.values()[binding.spinner.selectedItemPosition],

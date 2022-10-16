@@ -31,12 +31,13 @@
                 android:inputType="textPersonName"
                 android:text="Stepan"
                 android:hint="@string/search_username_placeholder"
-                android:ems="10"
+                android:textSize="20sp"
                 android:id="@+id/username"
         />
         <Spinner
                 android:layout_width="225dp"
                 android:layout_marginBottom="8dp"
+                android:textSize="20sp"
                 android:layout_height="48dp" android:id="@+id/spinner"/>
         <Button
                 android:text="@string/search_button"

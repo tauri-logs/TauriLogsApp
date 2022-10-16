@@ -13,7 +13,7 @@
     <androidx.fragment.app.FragmentContainerView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:name="com.taurilogs.app.ui.LoadingFragment"
-            android:id="@+id/fragmentContainerView2" android:layout_below="@+id/toolbarFragment"
+            android:id="@+id/player_activity_loading_fragment" android:layout_below="@+id/toolbarFragment"
             android:layout_centerHorizontal="true"/>
     <ExpandableListView
             android:id="@+id/expandableListView"
