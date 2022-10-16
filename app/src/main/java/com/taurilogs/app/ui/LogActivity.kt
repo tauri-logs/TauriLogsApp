@@ -1,5 +1,6 @@
 package com.taurilogs.app.ui
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -18,9 +19,12 @@ class LogActivity : AppCompatActivity() {
         binding = ActivityLogBinding.inflate(layoutInflater)
         for (member in service.raidDetail?.members!!) {
             val tbr = layoutInflater.inflate(R.layout.log_table_row, binding.tableLayout, false)
-            tbr.findViewById<TextView>(R.id.name).text = member.name
-            tbr.findViewById<TextView>(R.id.dps).text = member.dps.toString()
-            tbr.findViewById<TextView>(R.id.hps).text = member.hps.toString()
+            tbr.findViewById<TextView>(R.id.name).apply {
+                text = member.name
+                this.setTextColor(Color.parseColor(member.playerClass.color))
+            }
+            tbr.findViewById<TextView>(R.id.dps).text = String.format("%,d", member.dps)
+            tbr.findViewById<TextView>(R.id.hps).text = String.format("%,d", member.hps)
             binding.tableLayout.addView(tbr)
         }
         setContentView(binding.root)
