@@ -1,21 +1,16 @@
 package com.taurilogs.app.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.taurilogs.app.viewmodels.PlayerViewModel
 import com.taurilogs.app.databinding.ActivityPlayerBinding
-import com.taurilogs.app.viewmodels.CustomViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PlayerActivity : CustomActivity() {
 
     private lateinit var binding: ActivityPlayerBinding
     override val viewModel: PlayerViewModel by viewModel()
-    override val nextDestination: Class<*> = LogActivity::class.java
+    override val nextDestination: Class<*> = RaidDetailActivity::class.java
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

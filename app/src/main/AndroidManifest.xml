@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TauriLogsApp" >
         <activity
-            android:name=".ui.LogActivity"
+            android:name=".ui.RaidDetailActivity"
             android:exported="true" />
         <activity
             android:name=".ui.PlayerActivity"
