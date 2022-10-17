@@ -3,10 +3,12 @@ package com.taurilogs.app.ui
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TableRow
 import android.widget.TextView
 import com.taurilogs.app.R
 import com.taurilogs.app.databinding.ActivityRaidDetailBinding
+import com.taurilogs.app.enums.ui.SortEnum
 import com.taurilogs.app.viewmodels.RaidDetailViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -14,6 +16,8 @@ class RaidDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRaidDetailBinding
     private val viewModel: RaidDetailViewModel by viewModel()
+    private val rows: MutableList<TableRow> = mutableListOf()
+    private val headerCols: MutableList<View> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +43,7 @@ class RaidDetailActivity : AppCompatActivity() {
                 column.findViewById<TextView>(R.id.log_table_element).text = text
                 tbr.addView(column)
             }
+            rows.add(tbr)
             binding.tableLayout.addView(tbr)
         }
     }
@@ -53,9 +58,28 @@ class RaidDetailActivity : AppCompatActivity() {
                         textView.setOnClickListener {
                             header.sort = header.sort.next()
                             viewModel.sortMembers(header.sort, header.propertyName)
-                            this@RaidDetailActivity.recreate()
+                            (it as TextView).setCompoundDrawablesWithIntrinsicBounds(
+                                getSortIcon(header.sort), 0, 0, 0
+                            )
+                            reRenderRows()
                         }
                     })
+        }
+    }
+
+    private fun reRenderRows() {
+        for (row in rows) {
+            binding.tableLayout.removeView(row)
+        }
+        rows.clear()
+        populateRows()
+    }
+
+    private fun getSortIcon(sortEnum: SortEnum): Int {
+        return when (sortEnum) {
+            SortEnum.NONE -> 0
+            SortEnum.ASCENDING -> R.drawable.sharp_arrow_circle_up_24dp
+            SortEnum.DESCENDING -> R.drawable.sharp_arrow_circle_down_24dp
         }
     }
 }

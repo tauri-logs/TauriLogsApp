@@ -7,9 +7,14 @@
         <entry key="..\:/Users/Jakub/AppData/Local/Android/Sdk/platforms/android-33/data/res/layout/simple_spinner_dropdown_item.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jakub/AppData/Local/Android/Sdk/platforms/android-33/data/res/layout/test_list_item.xml" value="0.128125" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.11510416666666666" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/drawable/sharp_arrow_circle_down_24dp.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/drawable/sharp_arrow_circle_down_black_24dp.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/drawable/sharp_arrow_circle_up_24dp.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/drawable/sharp_search_black_24dp.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_log.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_player.xml" value="0.2" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_raid_detail.xml" value="0.1" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/activity_search.xml" value="0.2" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/content_scrolling.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/fragment_loading.xml" value="0.22780797101449277" />
@@ -17,6 +22,7 @@
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/log_table_element.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/log_table_header_element.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/log_table_row.xml" value="0.2" />
+        <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/rd_table_row.xml" value="0.1140625" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/spinner_item.xml" value="0.1" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/toolbar.xml" value="0.22780797101449277" />
         <entry key="..\:/Users/Jakub/IdeaProjects/TauriLogsApp/app/src/main/res/layout/week_list_group.xml" value="0.1" />
