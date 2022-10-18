@@ -20,7 +20,7 @@ class RaidDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRaidDetailBinding
     private val viewModel: RaidDetailViewModel by viewModel()
     private val rows: MutableList<TableRow> = mutableListOf()
-    private val headerCols: MutableList<View> = mutableListOf()
+    private val headerCols: MutableList<TextView> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,14 +63,16 @@ class RaidDetailActivity : AppCompatActivity() {
 
     private fun createHeaders() {
         for (header in viewModel.headers) {
-            val headerView = layoutInflater.inflate(R.layout.rd_table_header_element, binding.headerRow, false)
+            binding.headerRow.addView(
+                layoutInflater.inflate(R.layout.rd_table_header_element, binding.headerRow, false)
                 .apply {
                     val textView = findViewById<TextView>(R.id.log_header_title)
                     textView.text = header.displayName
-                    textView.setOnClickListener { sortByHeader(header, it as TextView)}
+                    setSortIcon(textView, header.sort)
+                    textView.setOnClickListener { sortByHeader(header, it as TextView) }
+                    headerCols.add(textView)
                 }
-            headerCols.add(headerView)
-            binding.headerRow.addView(headerView)
+            )
         }
     }
 
@@ -79,15 +81,16 @@ class RaidDetailActivity : AppCompatActivity() {
         viewModel.headers.forEachIndexed { index, raidDetailColumn ->
             if (raidDetailColumn.sort != SortEnum.NONE && raidDetailColumn != header) {
                 raidDetailColumn.sort = SortEnum.NONE
-                headerCols[index].findViewById<TextView>(R.id.log_header_title)
-                    .setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+                setSortIcon(headerCols[index], raidDetailColumn.sort)
             }
         }
         viewModel.sortMembers(header.sort, header.propertyName)
-        view.setCompoundDrawablesWithIntrinsicBounds(
-            header.sort.getSortIcon(), 0, 0, 0
-        )
+        setSortIcon(view, header.sort)
         reRenderRows()
+    }
+
+    private fun setSortIcon(textView: TextView, sort: SortEnum) {
+        textView.setCompoundDrawablesWithIntrinsicBounds(sort.sortIcon, 0, 0, 0)
     }
 
     private fun reRenderRows() {

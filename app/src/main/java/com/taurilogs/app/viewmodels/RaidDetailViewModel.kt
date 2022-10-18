@@ -12,7 +12,13 @@ class RaidDetailViewModel(private val service: LogService) : ViewModel() {
     val headers = listOf(
         RaidDetailColumn("dps", "DPS", true),
         RaidDetailColumn("hps", "HPS", true),
-        RaidDetailColumn("ilvl", "ILVL", true)
+        RaidDetailColumn("ilvl", "ILVL", true),
+        RaidDetailColumn("dmg_done", "dmg done", true),
+        RaidDetailColumn("dmg_taken", "dmg taken", true),
+        RaidDetailColumn("heal_done", "heal done", true),
+        RaidDetailColumn("dmg_absorb", "absorbs", true),
+        RaidDetailColumn("dispells", "dispells", true),
+        RaidDetailColumn("interrupts", "interrupts", true),
     )
     var members: List<Member> = service.raidDetail?.members!!
 
