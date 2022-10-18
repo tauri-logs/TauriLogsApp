@@ -13,7 +13,11 @@ class SearchViewModel(private val service: LogService) : CustomViewModel() {
 
     private val errorHandler = CoroutineExceptionHandler { _, exception ->
         android.util.Log.d("Tauri Logs", "Coroutine exception ", exception)
-        searchFinished.value = ServiceResponse(false, exception.message ?: "Unknown error")
+        val message = when (exception.message) {
+            "HTTP 502 Bad Gateway" -> "Tauri server is currently unavailable. Try again later."
+            else -> exception.message ?: "Unknown error"
+        }
+        searchFinished.value = ServiceResponse(false, message)
     }
 
     // viewModel serves for keeping data longer, than activity lives (e.g. when user rotates the screen)
