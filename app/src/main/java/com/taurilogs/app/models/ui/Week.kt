@@ -1,4 +1,4 @@
-package com.taurilogs.app.models
+package com.taurilogs.app.models.ui
 
 import com.taurilogs.app.models.log.Log
 import java.time.DayOfWeek

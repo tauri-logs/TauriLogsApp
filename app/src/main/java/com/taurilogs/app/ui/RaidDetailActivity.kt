@@ -79,7 +79,7 @@ class RaidDetailActivity : AppCompatActivity() {
     private fun sortByHeader(header: RaidDetailColumn, view: TextView) {
         header.sort = header.sort.next()
         viewModel.headers.forEachIndexed { index, raidDetailColumn ->
-            if (raidDetailColumn.sort != SortEnum.NONE && raidDetailColumn != header) {
+            if (raidDetailColumn.display && raidDetailColumn.sort != SortEnum.NONE && raidDetailColumn != header) {
                 raidDetailColumn.sort = SortEnum.NONE
                 setSortIcon(headerCols[index], raidDetailColumn.sort)
             }
