@@ -25,6 +25,7 @@ class RaidDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRaidDetailBinding.inflate(layoutInflater)
+        loadHeadersFromPrefs()
         createHeaders()
         populateRows()
         setContentView(binding.root)
@@ -99,5 +100,12 @@ class RaidDetailActivity : AppCompatActivity() {
         }
         rows.clear()
         populateRows()
+    }
+
+    private fun loadHeadersFromPrefs() {
+        val prefs = getPreferences(MODE_PRIVATE)
+        viewModel.headers.forEach {
+            it.display = prefs.getBoolean(it.propertyName, true)
+        }
     }
 }
