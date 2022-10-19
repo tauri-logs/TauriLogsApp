@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.taurilogs.app.R
-import com.taurilogs.app.models.Week
+import com.taurilogs.app.models.ui.Week
 import java.time.format.DateTimeFormatter
 
 class WeekListAdapter(

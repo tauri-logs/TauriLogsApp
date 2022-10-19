@@ -2,6 +2,7 @@ package com.taurilogs.app.viewmodels
 
 import androidx.lifecycle.viewModelScope
 import com.taurilogs.app.LogService
+import com.taurilogs.app.R
 import com.taurilogs.app.enums.RealmEnum
 import com.taurilogs.app.models.ServiceResponse
 import kotlinx.coroutines.CoroutineExceptionHandler

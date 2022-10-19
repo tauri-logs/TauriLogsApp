@@ -40,6 +40,7 @@ class ToolbarFragment : Fragment() {
             when (item.itemId) {
                 R.id.menu_settings -> {
                     Log.d("Tauri Logs", "Settings")
+                    moveToDestination(SettingsActivity::class.java)
                     true
                 }
                 R.id.menu_search -> {

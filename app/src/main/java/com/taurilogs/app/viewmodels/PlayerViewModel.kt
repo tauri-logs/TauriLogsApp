@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.taurilogs.app.LogService
 import com.taurilogs.app.models.ServiceResponse
-import com.taurilogs.app.models.Week
+import com.taurilogs.app.models.ui.Week
 import com.taurilogs.app.models.log.Log
 import com.taurilogs.app.ui.WeekListAdapter
 import kotlinx.coroutines.launch
