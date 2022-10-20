@@ -12,6 +12,7 @@ import org.koin.core.module.dsl.singleOf
 val applicationModule = module {
     single { TauriWebService(androidContext()) }
     singleOf(::LogService)
+    singleOf(::SettingsService)
     viewModelOf(::SearchViewModel)
     viewModelOf(::PlayerViewModel)
     viewModelOf(::RaidDetailViewModel)

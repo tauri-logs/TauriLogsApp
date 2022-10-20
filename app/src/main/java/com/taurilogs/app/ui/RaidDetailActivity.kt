@@ -4,7 +4,6 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.View
 import android.widget.TableRow
 import android.widget.TextView
 import com.taurilogs.app.R
@@ -25,7 +24,7 @@ class RaidDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRaidDetailBinding.inflate(layoutInflater)
-        loadHeadersFromPrefs()
+        viewModel.setupActiveHeaders(getPreferences(MODE_PRIVATE))
         createHeaders()
         populateRows()
         setContentView(binding.root)
@@ -39,7 +38,7 @@ class RaidDetailActivity : AppCompatActivity() {
                 setTextColor(Color.parseColor(member.playerClass.color))
                 addSpecIconToName(member.spec, this)
             }
-            for (header in viewModel.headers) {
+            for (header in viewModel.activeHeaders) {
                 val column = layoutInflater.inflate(R.layout.rd_table_element, tbr, false)
                 val fieldValue = member.javaClass.getDeclaredField(header.propertyName).apply {
                     isAccessible = true
@@ -63,7 +62,8 @@ class RaidDetailActivity : AppCompatActivity() {
     }
 
     private fun createHeaders() {
-        for (header in viewModel.headers) {
+
+        for (header in viewModel.activeHeaders) {
             binding.headerRow.addView(
                 layoutInflater.inflate(R.layout.rd_table_header_element, binding.headerRow, false)
                 .apply {
@@ -79,7 +79,7 @@ class RaidDetailActivity : AppCompatActivity() {
 
     private fun sortByHeader(header: RaidDetailColumn, view: TextView) {
         header.sort = header.sort.next()
-        viewModel.headers.forEachIndexed { index, raidDetailColumn ->
+        viewModel.activeHeaders.forEachIndexed { index, raidDetailColumn ->
             if (raidDetailColumn.display && raidDetailColumn.sort != SortEnum.NONE && raidDetailColumn != header) {
                 raidDetailColumn.sort = SortEnum.NONE
                 setSortIcon(headerCols[index], raidDetailColumn.sort)
@@ -102,10 +102,4 @@ class RaidDetailActivity : AppCompatActivity() {
         populateRows()
     }
 
-    private fun loadHeadersFromPrefs() {
-        val prefs = getPreferences(MODE_PRIVATE)
-        viewModel.headers.forEach {
-            it.display = prefs.getBoolean(it.propertyName, true)
-        }
-    }
 }
