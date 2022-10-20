@@ -24,7 +24,6 @@ class RaidDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRaidDetailBinding.inflate(layoutInflater)
-        viewModel.setupActiveHeaders(getPreferences(MODE_PRIVATE))
         createHeaders()
         populateRows()
         setContentView(binding.root)
@@ -62,7 +61,7 @@ class RaidDetailActivity : AppCompatActivity() {
     }
 
     private fun createHeaders() {
-
+        viewModel.setupActiveHeaders(getSharedPreferences(getString(R.string.preference_file_settings), MODE_PRIVATE))
         for (header in viewModel.activeHeaders) {
             binding.headerRow.addView(
                 layoutInflater.inflate(R.layout.rd_table_header_element, binding.headerRow, false)
@@ -102,4 +101,11 @@ class RaidDetailActivity : AppCompatActivity() {
         populateRows()
     }
 
+    private fun reRenderColumns() {
+        for (header in headerCols) {
+            binding.headerRow.removeView(header)
+        }
+        headerCols.clear()
+        createHeaders()
+    }
 }

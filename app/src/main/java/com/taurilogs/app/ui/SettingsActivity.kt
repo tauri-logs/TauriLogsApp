@@ -18,7 +18,8 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
-        settingsService.loadHeadersFromPrefs(getPreferences(MODE_PRIVATE))
+        val prefs = getSharedPreferences(getString(R.string.preference_file_settings), MODE_PRIVATE)
+        settingsService.loadHeadersFromPrefs(prefs)
         settingsService.rdHeaders.forEach {
             binding.settingsTable.addView(
                 layoutInflater.inflate(R.layout.settings_rd_display_row, binding.settingsTable, false).apply {
@@ -27,7 +28,7 @@ class SettingsActivity : AppCompatActivity() {
                         isChecked = it.display
                         setOnCheckedChangeListener { _, isChecked ->
                             it.display = isChecked
-                            getPreferences(MODE_PRIVATE).edit().apply {
+                            prefs.edit().apply {
                                 putBoolean(it.propertyName, it.display)
                                 apply()
                             }

@@ -1,6 +1,7 @@
 package com.taurilogs.app.viewmodels
 
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.taurilogs.app.LogService
 import com.taurilogs.app.SettingsService
@@ -17,6 +18,7 @@ class RaidDetailViewModel(private val logService: LogService, private val settin
     fun setupActiveHeaders(prefs: SharedPreferences) {
         settingsService.loadHeadersFromPrefs(prefs)
         activeHeaders = settingsService.rdHeaders.filter { it.display }
+        Log.d("active headers-setup", "${activeHeaders.size}")
     }
 
     fun sortMembers(sortEnum: SortEnum = SortEnum.NONE, memberField: String?) {
