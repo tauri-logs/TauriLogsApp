@@ -2,11 +2,10 @@ package com.taurilogs.app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.CheckBox
 import android.widget.TextView
 import com.taurilogs.app.R
-import com.taurilogs.app.SettingsService
+import com.taurilogs.app.services.SettingsService
 import com.taurilogs.app.databinding.ActivitySettingsBinding
 import org.koin.android.ext.android.inject
 

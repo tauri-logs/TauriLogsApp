@@ -1,4 +1,4 @@
-package com.taurilogs.app
+package com.taurilogs.app.services
 
 import android.content.SharedPreferences
 import com.taurilogs.app.models.ui.RaidDetailColumn

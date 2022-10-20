@@ -2,6 +2,8 @@ package com.taurilogs.app
 
 import org.koin.dsl.module
 import com.taurilogs.app.api.TauriWebService
+import com.taurilogs.app.services.LogService
+import com.taurilogs.app.services.SettingsService
 import com.taurilogs.app.viewmodels.PlayerViewModel
 import com.taurilogs.app.viewmodels.SearchViewModel
 import com.taurilogs.app.viewmodels.RaidDetailViewModel

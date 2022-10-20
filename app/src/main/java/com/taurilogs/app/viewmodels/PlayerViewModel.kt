@@ -3,7 +3,7 @@ package com.taurilogs.app.viewmodels
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.taurilogs.app.LogService
+import com.taurilogs.app.services.LogService
 import com.taurilogs.app.models.ServiceResponse
 import com.taurilogs.app.models.ui.Week
 import com.taurilogs.app.models.log.Log
@@ -35,7 +35,7 @@ class PlayerViewModel(private val service: LogService) : CustomViewModel() {
 
     fun getWeekListAdapter(owner: Context): MutableLiveData<WeekListAdapter> {
         viewModelScope.launch {
-            if (weekListAdapter.value == null && service.logs != null) {
+            if (weekListAdapter.value == null && !service.logs.isNullOrEmpty()) {
                 weekListAdapter.value = WeekListAdapter(owner, getWeeks(service.logs!!))
             }
         }

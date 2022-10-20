@@ -1,4 +1,4 @@
-package com.taurilogs.app
+package com.taurilogs.app.services
 
 import androidx.lifecycle.MutableLiveData
 import com.taurilogs.app.api.TauriWebService

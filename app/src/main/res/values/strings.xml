@@ -8,4 +8,6 @@
     <string name="dps_header">DPS</string>
     <string name="hps_header">HPS</string>
     <string name="preference_file_settings">com.taurilogs.app.settings</string>
+    <string name="settings_left">Header</string>
+    <string name="settings_right">Visible</string>
 </resources>

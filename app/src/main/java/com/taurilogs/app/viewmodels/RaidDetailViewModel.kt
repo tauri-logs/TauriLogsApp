@@ -3,8 +3,8 @@ package com.taurilogs.app.viewmodels
 import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.taurilogs.app.LogService
-import com.taurilogs.app.SettingsService
+import com.taurilogs.app.services.LogService
+import com.taurilogs.app.services.SettingsService
 import com.taurilogs.app.enums.ui.SortEnum
 import com.taurilogs.app.models.player.Member
 import com.taurilogs.app.models.ui.RaidDetailColumn
